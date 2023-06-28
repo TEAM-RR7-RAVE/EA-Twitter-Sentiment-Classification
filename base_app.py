@@ -32,11 +32,12 @@ import pickle
 
 
 # Vectorizer
-news_vectorizer = open("resources/vectorizer.pkl","rb")
+news_vectorizer = open("resources/rave_model.pkl","rb")
 tweet_cv = joblib.load(news_vectorizer) # loading your vectorizer from the pkl file
 
 # Load your raw data
 raw = pd.read_csv("resources/train.csv")
+
 
 # The main function where we will build the actual app
 def main():
