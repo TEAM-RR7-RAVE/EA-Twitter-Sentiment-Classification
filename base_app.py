@@ -45,8 +45,11 @@ def main():
 
 	# Creates a main title and subheader on your page -
 	# these are static across all pages
-	st.title("Tweet Classifer")
-	st.subheader("Climate change tweet classification")
+	head, im = st.columns(2)
+	head.title('Rave Data Analytics')
+	im.image('resources/rave.png', caption = 'For the Data that Never Sleeps', width = 100)
+	
+	st.subheader("Climate Change Tweet Classification")
 
 	# Creating sidebar with selection box -
 	# you can create multiple pages this way
@@ -57,7 +60,7 @@ def main():
 	if selection == "Information":
 		st.info("General Information")
 		# You can read a markdown file from supporting resources folder
-		st.markdown("Some information here")
+		st.markdown("This application classifies whether or not a person believes in climate change, based on their novel tweet data.")
 
 		st.subheader("Raw Twitter data and label")
 		if st.checkbox('Show raw data'): # data is hidden if box is unchecked
@@ -69,18 +72,47 @@ def main():
 		# Creating a text box for user input
 		tweet_text = st.text_area("Enter Text","Type Here")
 
-		if st.button("Classify"):
+		if st.button("Support Vector Classifier"):
 			# Transforming user input with vectorizer
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/rave_model.pkl"),"rb"))
+			predictor = joblib.load(open(os.path.join("resources/svc_model.pkl"),"rb"))
+			prediction = predictor.predict(vect_text)
+   
+			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
+			prediction_map = [prediction_dic.get(value) for value in prediction]
+
+			# When model has successfully run, will print prediction
+			# You can use a dictionary or similar structure to make this output
+			# more human interpretable.
+			st.success("Text Categorized as: {}".format(prediction_map))
+   
+		if st.button("Ridge Classifier"):
+			# Transforming user input with vectorizer
+			vect_text = tweet_cv.transform([tweet_text]).toarray()
+			# Load your .pkl file with the model of your choice + make predictions
+			# Try loading in multiple models to give the user a choice
+			predictor = joblib.load(open(os.path.join("resources/ridge_model.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
 
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
-			st.success("Text Categorized as: {}".format(prediction))
+			st.success("Text Categorized as: {}".format(prediction_map))
+   
+		if st.button("Random Forest Classifier"):
+			# Transforming user input with vectorizer
+			vect_text = tweet_cv.transform([tweet_text]).toarray()
+			# Load your .pkl file with the model of your choice + make predictions
+			# Try loading in multiple models to give the user a choice
+			predictor = joblib.load(open(os.path.join("resources/forest_model.pkl"),"rb"))
+			prediction = predictor.predict(vect_text)
+
+			# When model has successfully run, will print prediction
+			# You can use a dictionary or similar structure to make this output
+			# more human interpretable.
+			st.success("Text Categorized as: {}".format(prediction_map))
 
 # Required to let Streamlit instantiate our web app.  
 if __name__ == '__main__':
