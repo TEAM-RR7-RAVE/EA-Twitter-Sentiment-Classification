@@ -62,8 +62,8 @@ Classification Report:
            2       0.76      0.69      0.73       706
 
     accuracy                           0.73      3164
-   macro avg       0.74      0.55      0.59      3164
-weighted avg       0.73      0.73      0.70      3164
+    macro avg       0.74      0.55      0.59      3164
+    weighted avg       0.73      0.73      0.70      3164
 
 
 Random Forest: 0.67
@@ -78,8 +78,8 @@ Classification Report:
            2       0.72      0.64      0.68       706
 
     accuracy                           0.70      3164
-   macro avg       0.71      0.51      0.55      3164
-weighted avg       0.70      0.70      0.67      3164
+    macro avg       0.71      0.51      0.55      3164
+    weighted avg       0.70      0.70      0.67      3164
 
 
 Ridge Classifier: 0.68
@@ -94,8 +94,8 @@ Classification Report:
            2       0.67      0.70      0.68       706
 
     accuracy                           0.69      3164
-   macro avg       0.62      0.58      0.59      3164
-weighted avg       0.68      0.69      0.68      3164
+    macro avg       0.62      0.58      0.59      3164
+    weighted avg       0.68      0.69      0.68      3164
 
 
 K-Nearest Neibour: 0.63
@@ -110,8 +110,8 @@ Classification Report:
            2       0.73      0.65      0.69       706
 
     accuracy                           0.70      3164
-   macro avg       0.71      0.52      0.55      3164
-weighted avg       0.70      0.70      0.67      3164
+    macro avg       0.71      0.52      0.55      3164
+    weighted avg       0.70      0.70      0.67      3164
 
 
 Light Gradient Boosting Machine: 0.68
@@ -126,8 +126,8 @@ Classification Report:
            2       0.70      0.66      0.68       706
 
     accuracy                           0.70      3164
-   macro avg       0.66      0.55      0.58      3164
-weighted avg       0.69      0.70      0.68      3164
+    macro avg       0.66      0.55      0.58      3164
+    weighted avg       0.69      0.70      0.68      3164
 
 
 
