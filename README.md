@@ -147,6 +147,7 @@ Streamlit is an open-source app framework for Machine Learning and Data Science 
 Our application has one type of input and out
   - Input - Text data, which in our case are the tweets
   - Output - The sentiment associated with the input tweet, predicted by our model.
+    
 The application then allows the user to classify the tweet using any of 3 different clasiffiers:
   - Support Vector Classifier
   - Ridge Classifier
