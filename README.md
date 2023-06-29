@@ -98,7 +98,7 @@ Classification Report:
     weighted avg       0.68      0.69      0.68      3164
 
 
-K-Nearest Neibour: 0.63
+K-Nearest Neighbour: 0.63
 
 Classification Report:
 
