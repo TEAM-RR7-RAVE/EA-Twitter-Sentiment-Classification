@@ -139,7 +139,7 @@ This showed that the Support Vector Machine performed better than the other mode
  Finally!! , the project was deployed using a streamlit app.
  Note: Run the base_app.py file to view the web based application
 
-## Stremlit Application
+## Streamlit Application
 The we created a a web based application using streamlit.
 Streamlit is an open-source app framework for Machine Learning and Data Science uses.
 
