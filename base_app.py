@@ -95,8 +95,10 @@ def main():
 			# Try loading in multiple models to give the user a choice
 			predictor = joblib.load(open(os.path.join("resources/ridge_model.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
-
-			# When model has successfully run, will print prediction
+   
+			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
+			prediction_map = [prediction_dic.get(value) for value in prediction]
+   			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
 			st.success("Text Categorized as: {}".format(prediction_map))
@@ -108,7 +110,9 @@ def main():
 			# Try loading in multiple models to give the user a choice
 			predictor = joblib.load(open(os.path.join("resources/forest_model.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
-
+   			
+			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
+			prediction_map = [prediction_dic.get(value) for value in prediction]
 			# When model has successfully run, will print prediction
 			# You can use a dictionary or similar structure to make this output
 			# more human interpretable.
