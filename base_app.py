@@ -77,7 +77,7 @@ def main():
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/svc_model.pkl"),"rb"))
+			predictor = joblib.load(open(os.path.join("resources/ridge_model.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
    
 			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
@@ -88,12 +88,12 @@ def main():
 			# more human interpretable.
 			st.success("Text Categorized as: {}".format(prediction_map))
    
-		if st.button("Ridge Classifier"):
+		if st.button("Random Forest Classifier"):
 			# Transforming user input with vectorizer
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/ridge_model.pkl"),"rb"))
+			predictor = joblib.load(open(os.path.join("resources/forest.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
    
 			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
@@ -103,12 +103,12 @@ def main():
 			# more human interpretable.
 			st.success("Text Categorized as: {}".format(prediction_map))
    
-		if st.button("Random Forest Classifier"):
+		if st.button("Ridge Classifier"):
 			# Transforming user input with vectorizer
 			vect_text = tweet_cv.transform([tweet_text]).toarray()
 			# Load your .pkl file with the model of your choice + make predictions
 			# Try loading in multiple models to give the user a choice
-			predictor = joblib.load(open(os.path.join("resources/forest_model.pkl"),"rb"))
+			predictor = joblib.load(open(os.path.join("resources/ridge.pkl"),"rb"))
 			prediction = predictor.predict(vect_text)
    			
 			prediction_dic = {1: 'Pro', 2: 'Linked to Factual News', 0: 'Neutral', -1: 'Anti'}
