@@ -144,7 +144,7 @@ The we created a a web based application using streamlit.
 Streamlit is an open-source app framework for Machine Learning and Data Science uses.
 
 ### Functionality
-Our application has one type of input and out
+Our application has one type of input and output
   - Input - Text data, which in our case are the tweets
   - Output - The sentiment associated with the input tweet, predicted by our model.
     
